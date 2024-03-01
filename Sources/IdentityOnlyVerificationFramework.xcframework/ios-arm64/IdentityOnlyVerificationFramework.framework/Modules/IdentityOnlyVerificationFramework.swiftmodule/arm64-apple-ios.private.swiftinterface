@@ -1,0 +1,74 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IdentityOnlyVerificationFramework
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+import CommonCrypto
+import Foundation
+@_exported import IdentityOnlyVerificationFramework
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 15.0, *)
+public struct MaterialDesignTextField : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public init(_ text: SwiftUI.Binding<Swift.String>, placeholder: Swift.String, hint: SwiftUI.Binding<Swift.String>, editing: SwiftUI.Binding<Swift.Bool>, valid: SwiftUI.Binding<Swift.Bool>, autocapitalization: SwiftUI.TextInputAutocapitalization = .sentences)
+  public typealias Body = @_opaqueReturnTypeOf("$s33IdentityOnlyVerificationFramework23MaterialDesignTextFieldV4bodyQrvp", 0) __
+}
+public struct ExtractedDocumentResponse : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct Result : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct IndigeneInfo : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PersonalInfo : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension IdentityOnlyVerificationFramework.ExtractedDocumentResponse {
+  public func encodeToJsonString() -> Swift.String?
+  public static func decodeFromJsonString(_ jsonString: Swift.String) -> IdentityOnlyVerificationFramework.ExtractedDocumentResponse?
+}
+@_hasMissingDesignatedInitializers public class DocumentVerifyManager {
+  public static let shared: IdentityOnlyVerificationFramework.DocumentVerifyManager
+  public func startSDK(_ viewController: UIKit.UIViewController, clientId: Swift.String, appName: Swift.String, apiKey: Swift.String, isDev: Swift.Bool, documentType: IdentityOnlyVerificationFramework.DocumentType = .SELECTOR, documentNumber: Swift.String? = nil, onComplete: ((_ jsonRawValue: Swift.String, _ extractedDocumentResponse: IdentityOnlyVerificationFramework.ExtractedDocumentResponse) -> Swift.Void)?, onFailure: ((_ statusCode: Swift.Int, _ errorText: Swift.String) -> Swift.Void)?)
+  @objc deinit
+}
+extension Foundation.URLSession {
+  public func downloadTaskPublisher(for url: Foundation.URL) -> IdentityOnlyVerificationFramework.DownloadTaskPublisher
+  public func downloadTaskPublisher(for request: Foundation.URLRequest) -> IdentityOnlyVerificationFramework.DownloadTaskPublisher
+}
+public struct DownloadTaskPublisher {
+}
+extension IdentityOnlyVerificationFramework.DownloadTaskPublisher : Combine.Publisher {
+  public typealias Output = (Foundation.URL, Foundation.URLResponse)
+  public typealias Failure = Swift.Error
+  public func receive<Subscriber>(subscriber: Subscriber) where Subscriber : Combine.Subscriber, Subscriber.Failure == any Swift.Error, Subscriber.Input == (Foundation.URL, Foundation.URLResponse)
+}
+public enum DocumentType {
+  case PASSPORT
+  case BVN
+  case DRIVER_LICENSE
+  case NIN
+  case PVC
+  case SELECTOR
+  public init?(rawValue: Swift.String)
+  public static func == (a: IdentityOnlyVerificationFramework.DocumentType, b: IdentityOnlyVerificationFramework.DocumentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension IdentityOnlyVerificationFramework.DocumentType : Swift.Equatable {}
+extension IdentityOnlyVerificationFramework.DocumentType : Swift.Hashable {}

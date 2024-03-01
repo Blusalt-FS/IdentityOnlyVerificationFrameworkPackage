@@ -1,0 +1,11 @@
+framework module IdentityOnlyVerificationFramework {
+  umbrella header "IdentityOnlyVerificationFramework.h"
+  export *
+
+  module * { export * }
+}
+
+module IdentityOnlyVerificationFramework.Swift {
+  header "IdentityOnlyVerificationFramework-Swift.h"
+  requires objc
+}
