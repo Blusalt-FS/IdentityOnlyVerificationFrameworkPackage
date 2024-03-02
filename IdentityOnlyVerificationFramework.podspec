@@ -17,13 +17,13 @@ Pod::Spec.new do |spec|
   #
   
   spec.name = 'IdentityOnlyVerificationFramework' # name of the framework
-  spec.version = '0.0.9' # same as github tag version
+  spec.version = '0.0.10' # same as github tag version
   spec.license = { :type => 'MIT' }
   spec.homepage = 'https://blusalt.net' # Website with details about pod or github repository link
   spec.authors = { 'Opeyemi Folarin' => 'folarin@blusalt.net' } # name & email address of the framework author
   spec.platform = :ios, "14.0"
   spec.summary = 'Blusalt IdentityOnlyVerificationFramework SDK for ios'
-  spec.source = { :git => 'https://github.com/Blusalt-FS/IdentityOnlyVerificationFrameworkPackage.git', :tag => 'v0.0.9' } # url to clone the framework, tag may be same as spec.version
+  spec.source = { :git => 'https://github.com/Blusalt-FS/IdentityOnlyVerificationFrameworkPackage.git', :tag => 'v0.0.10' } # url to clone the framework, tag may be same as spec.version
   # spec.source_files = 'Classes/**/*.{h,m,swift}' # add the regex to access                all the files for the framework ex: ‘FrameworkName/**/*.{h,m,swift}’
     
   # spec.swift_version = '5.7'
@@ -34,6 +34,10 @@ Pod::Spec.new do |spec|
   'VALID_ARCHS[sdk=iphoneos*]' => '$(ARCHS_STANDARD)',
   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD)'
   }
-  spec.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD)','VALID_ARCHS' => 'arm64',}
-  spec.user_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD)','VALID_ARCHS' => 'arm64',}
+  spec.pod_target_xcconfig = {
+  'VALID_ARCHS[sdk=iphoneos*]' => '$(ARCHS_STANDARD)',
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD)'}
+  spec.user_target_xcconfig = {
+  'VALID_ARCHS[sdk=iphoneos*]' => '$(ARCHS_STANDARD)',
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '$(ARCHS_STANDARD)'}
 end
